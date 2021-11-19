@@ -1,0 +1,33 @@
+<mat-dialog-content [formGroup]="form">
+  
+    <mat-form-field>
+        <input matInput #name
+                              
+              placeholder="name">
+              
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput #isPremium
+               
+              placeholder="isPremium">
+              
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput #phone
+               
+              placeholder="phone">
+              
+    </mat-form-field>
+
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)=
+    "add(name.value, isPremium.value, phone.value); name.value=''; isPremium.value; phone.value=''">
+        Dodaj
+    </button>
+</mat-dialog-actions>

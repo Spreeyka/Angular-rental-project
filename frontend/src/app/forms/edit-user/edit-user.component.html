@@ -1,0 +1,38 @@
+<div *ngIf="user">
+<mat-dialog-content [formGroup]="form">
+
+    <mat-form-field>
+            <input matInput
+            [(ngModel)]="user.name" 
+            [ngModelOptions]="{standalone: true}"
+            placeholder="name">
+              
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput
+        
+        [(ngModel)]="user.isPremium" 
+        [ngModelOptions]="{standalone: true}"
+        placeholder="isPremium">
+              
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput
+            
+        [(ngModel)]="user.phone" 
+        [ngModelOptions]="{standalone: true}"
+        placeholder="phone">
+              
+    </mat-form-field>
+
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
+</div>
+

@@ -1,0 +1,43 @@
+<div *ngIf="game">
+<mat-dialog-content [formGroup]="form">
+  
+  <mat-form-field>
+      <input matInput
+            [(ngModel)]="game.title" 
+            [ngModelOptions]="{standalone: true}"                  
+            placeholder="title">
+            
+  </mat-form-field>
+
+  <mat-form-field>
+      <input matInput 
+            [(ngModel)]="game.genre._id" 
+            [ngModelOptions]="{standalone: true}"  
+            placeholder="genreId">
+            
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput 
+          [(ngModel)]="game.numberInStock"
+          [ngModelOptions]="{standalone: true}"  
+          placeholder="numberInStock">
+          
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput 
+        [(ngModel)]="game.dailyRentalRate"
+        [ngModelOptions]="{standalone: true}"  
+        placeholder="dailyRentalRate">
+        
+</mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
+</div>

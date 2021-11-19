@@ -1,0 +1,44 @@
+<div class="search-div">
+  <button mat-raised-button class="create-button" (click)="openDialog()">Add</button>
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div class="mat-elevation-z8 rentals-data-table">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="_id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row._id}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="customerId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>customerId</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.customerId}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="gameId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>gameId</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.gameId}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="dateOut">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>dateOut</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.dateOut}}</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

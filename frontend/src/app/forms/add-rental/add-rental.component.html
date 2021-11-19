@@ -1,0 +1,26 @@
+<mat-dialog-content [formGroup]="form">
+  
+  <mat-form-field>
+    <input matInput #customerId
+                          
+          placeholder="customerId">
+          
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput #gameId
+                         
+        placeholder="gameId">
+        
+</mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)=
+  "add(customerId.value, gameId.value); customerId.value=''; gameId.value=''">
+  Dodaj
+</button>
+</mat-dialog-actions>

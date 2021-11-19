@@ -1,0 +1,32 @@
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput #title placeholder="title">
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #genreId placeholder="genre">
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #numberInStock placeholder="number available">
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #dailyRentalRate placeholder="rental rate">
+
+  </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"
+    (click)="add(title.value, genreId.value, numberInStock.value, dailyRentalRate.value); title.value=''; genreId.value=''; numberInStock.value=''; dailyRentalRate.value=''">
+    Dodaj
+  </button>
+</mat-dialog-actions>

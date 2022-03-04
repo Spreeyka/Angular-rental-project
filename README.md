@@ -12,7 +12,7 @@ Install Node.js and MongoDb with MongoDbCompass to add some data and create data
 
 server:
 
-you need to initialize mongoDb database with mongod command done in cmd (you may need to create environment variable for that)\
+you need to initialize mongoDb database with mongod command done in cmd - you might need to create environment variable for that\
 set gamesRental_jwtPrivateKey=myKey\
 node index.js
 
